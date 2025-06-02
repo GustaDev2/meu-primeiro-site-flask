@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Serviços - Meu Site Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Meu Site Flask</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contato') }}">Contato</a></li>
+                <li><a href="{{ url_for('servicos') }}">Serviços</a></li> </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Nossos Serviços</h1>
+        <p>Conheça os serviços que oferecemos para você:</p>
+
+        <section class="services-list">
+            {% if servicos %}
+                {% for servico in servicos %}
+                <div class="service-item">
+                    <h2>{{ servico.nome }}</h2>
+                    <p>{{ servico.descricao }}</p>
+                    {% if servico.preco %}
+                        <p><strong>Preço:</strong> R$ {{ "%.2f"|format(servico.preco) }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nenhum serviço disponível no momento.</p>
+            {% endif %}
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meu Primeiro Site Flask. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

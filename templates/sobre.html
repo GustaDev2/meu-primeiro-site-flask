@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Meu Site Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Sobre Nós</h1>
+    <p>Este é um site simples criado com Flask para demonstrar os fundamentos.</p>
+    <p>Estou aprendendo muito!</p>
+    
+    <h2>Nossa Equipe</h2>
+    <ul>
+        {% for membro in membros_da_equipe %}
+        <li>
+            <strong>{{ membro.nome }}</strong> - {{ membro.cargo }}
+        </li>
+        {% endfor %}
+        </ul>
+
+<nav>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+        <li><a href="{{ url_for('contato') }}">Contato</a></li>
+        <li><a href="{{ url_for('servicos') }}">Serviços</a></li> </ul>
+</nav>
+</div>
+</body>
+</html>

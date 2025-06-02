@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+Python-*-info/
+build/
+dist/
+develop-eggs/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.memo
+venv/
+.env
+.pytest_cache/
+.coverage
+.mypy_cache/
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# IDEs (se usar outras, pode adicionar)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Editor backups
+*~
+*.bak
+*.swp
+*.swo
+
+# Flask specific (se houver uploads de usuário ou dados temporários)
+instance/
+*.sqlite3 # Se usar SQLite e o banco de dados for gerado
+
+# Logs
+*.log

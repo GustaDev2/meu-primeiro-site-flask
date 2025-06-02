@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Meu Site Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Meu Site Flask</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
+                <li><a href="{{ url_for('contato') }}">Contato</a></li>
+                <li><a href="{{ url_for('servicos') }}">Serviços</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Bem-vindo, {{ usuario }}!</h1>
+        <p>Esta é a página inicial do nosso site. Hoje é {{ hoje }}.</p>
+    <p>Explore as outras seções usando o menu acima.</p>
+
+    {% if logado %}
+        <p>Você está logado e pode acessar recursos exclusivos!</p>
+        <button>Meu Perfil</button>
+    {% else %}
+        <p>Por favor, faça login para ter acesso completo ao site.</p>
+        <button>Fazer Login</button>
+        <button>Registrar-se</button>
+    {% endif %}
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meu Primeiro Site Flask. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
